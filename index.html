@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkateSwap - Shoe Exchange</title>
+
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Load Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Inline emergency fix for immediate application -->
+  <script>
+    // Inline emergency fix to ensure immediate application
+    (function () {
+      console.log('Initial emergency fix running...');
+
+      // Make page interactive and remove any overlays
+      function makePageInteractive() {
+        document.documentElement.style.pointerEvents = 'auto';
+        document.body.style.pointerEvents = 'auto';
+
+        // Remove any fullscreen overlays
+        const overlays = document.querySelectorAll('div[style*="position: fixed"][style*="top: 0"][style*="left: 0"][style*="width: 100%"][style*="height: 100%"]');
+        overlays.forEach(function (overlay) {
+          overlay.remove();
+        });
+      }
+
+      // Apply basic styling immediately
+      const style = document.createElement('style');
+      style.textContent = `
+        body {
+          background-color: #f5f5f5 !important;
+          color: #121212 !important;
+          font-family: 'Inter', sans-serif !important;
+          margin: 0 !important;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'Bebas Neue', sans-serif !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.05em !important;
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Run fix during page loading
+      var fixInterval = setInterval(makePageInteractive, 100);
+
+      // Stop frequent checks after page loads
+      window.addEventListener('load', function () {
+        clearInterval(fixInterval);
+        makePageInteractive();
+      });
+    })();
+  </script>
+
+  <!-- Load emergency fix script -->
+  <script src="/src/emergency-fix.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Re-run emergency fix after page load -->
+  <script>
+    window.addEventListener('load', function () {
+      // Make all elements interactive
+      var allElements = document.querySelectorAll('*');
+      allElements.forEach(function (el) {
+        el.style.pointerEvents = 'auto';
+      });
+
+      // Run emergency fix with delay to catch React-rendered content
+      setTimeout(function () {
+        if (typeof window.runEmergencyFix === 'function') {
+          window.runEmergencyFix();
+        }
+      }, 500);
+
+      // Run once more after all dynamic content should be loaded
+      setTimeout(function () {
+        if (typeof window.runEmergencyFix === 'function') {
+          window.runEmergencyFix();
+        }
+      }, 2000);
+    });
+  </script>
+</body>
+
+</html>

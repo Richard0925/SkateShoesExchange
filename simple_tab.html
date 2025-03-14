@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkateSwap - Skateboard Shoe Exchange Platform</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a202c;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .filter-section {
+            background-color: #20232a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .filter-label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #2d3748;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .filter-footer {
+            color: #9ca3af;
+        }
+
+        .reset-button {
+            background: none;
+            border: none;
+            color: #f97316;
+            cursor: pointer;
+        }
+
+        .tab-container {
+            display: flex;
+            border-bottom: 1px solid #2d3748;
+            margin-bottom: 2rem;
+        }
+
+        .tab {
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            border-bottom: 2px solid #f97316;
+            color: #f97316;
+        }
+
+        .listing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .listing-card {
+            background-color: #1f2937;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .listing-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .listing-content {
+            padding: 1rem;
+        }
+
+        .listing-foot-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #f97316;
+            color: white;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+        }
+
+        .listing-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .listing-specs {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .listing-location {
+            display: flex;
+            align-items: center;
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+
+        .listing-username {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-header">
+                <h3>Filter</h3>
+                <button class="reset-button">Reset Filters</button>
+            </div>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label class="filter-label">Brand</label>
+                    <select class="filter-select">
+                        <option>All Brands</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Size</label>
+                    <select class="filter-select">
+                        <option>All Sizes</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Preferred Foot</label>
+                    <select class="filter-select">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Minimum Condition</label>
+                    <select class="filter-select">
+                        <option>Any</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Location</label>
+                    <select class="filter-select">
+                        <option>Any Location</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Sort By</label>
+                    <select class="filter-select">
+                        <option>Newest</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filter-footer">
+                Filter results will update automatically
+            </div>
+        </div>
+
+        <!-- Tab Container (Only All Shoes) -->
+        <div class="tab-container">
+            <div class="tab">All Shoes</div>
+        </div>
+
+        <!-- Shoes Grid -->
+        <div class="listing-grid">
+            <!-- Example Shoes Cards -->
+            <div class="listing-card">
+                <div style="position: relative;">
+                    <img src="https://via.placeholder.com/300x250" alt="Shoe" class="listing-image">
+                    <span class="listing-foot-tag">Right</span>
+                </div>
+                <div class="listing-content">
+                    <h3 class="listing-title">Nike SB Dunk Low Pro</h3>
+                    <div class="listing-specs">
+                        <div>Size: UK 8</div>
+                        <div>Condition: 9/10</div>
+                    </div>
+                    <div class="listing-location">
+                        <span>London</span>
+                        <span style="margin-left: auto;">11/15/2023</span>
+                    </div>
+                    <div class="listing-username">
+                        <span>@skateking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing-card">
+                <div style="position: relative;">
+                    <img src="https://via.placeholder.com/300x250" alt="Shoe" class="listing-image">
+                    <span class="listing-foot-tag">Left</span>
+                </div>
+                <div class="listing-content">
+                    <h3 class="listing-title">Etnies Marana</h3>
+                    <div class="listing-specs">
+                        <div>Size: UK 7</div>
+                        <div>Condition: 6/10</div>
+                    </div>
+                    <div class="listing-location">
+                        <span>Liverpool</span>
+                        <span style="margin-left: auto;">12/10/2023</span>
+                    </div>
+                    <div class="listing-username">
+                        <span>@flipmaster</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing-card">
+                <div style="position: relative;">
+                    <img src="https://via.placeholder.com/300x250" alt="Shoe" class="listing-image">
+                    <span class="listing-foot-tag">Right</span>
+                </div>
+                <div class="listing-content">
+                    <h3 class="listing-title">Lakai Cambridge</h3>
+                    <div class="listing-specs">
+                        <div>Size: UK 10</div>
+                        <div>Condition: 10/10</div>
+                    </div>
+                    <div class="listing-location">
+                        <span>Birmingham</span>
+                        <span style="margin-left: auto;">12/8/2023</span>
+                    </div>
+                    <div class="listing-username">
+                        <span>@olliepro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

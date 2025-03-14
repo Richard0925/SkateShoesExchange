@@ -1,0 +1,237 @@
+/* 像素风格主题 - 8-bit街机UI设计 */
+
+/* 导入像素字体 */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+/* 基础变量 */
+:root {
+    --pixel-black: #000000;
+    --pixel-white: #ffffff;
+    --neon-green: #00FF88;
+    --neon-orange: #FF6B00;
+    --pixel-gray: #333333;
+    --pixel-border: 2px solid var(--neon-green);
+}
+
+/* 全局样式 */
+.pixel-theme {
+    background-color: var(--pixel-black);
+    color: var(--pixel-white);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+/* 标题样式 */
+.pixel-theme h1,
+.pixel-theme h2,
+.pixel-theme h3 {
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.pixel-theme h1 {
+    color: var(--neon-green);
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.7);
+}
+
+.pixel-theme h2 {
+    color: var(--neon-orange);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.pixel-theme h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* 像素边框 */
+.pixel-border {
+    border: var(--pixel-border);
+    image-rendering: pixelated;
+    padding: 8px;
+}
+
+/* 像素按钮 */
+.pixel-btn {
+    background-color: var(--pixel-black);
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.pixel-btn:hover {
+    background-color: var(--neon-green);
+    color: var(--pixel-black);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.pixel-btn-primary {
+    background-color: var(--neon-orange);
+    border-color: var(--neon-orange);
+    color: var(--pixel-black);
+}
+
+.pixel-btn-primary:hover {
+    background-color: var(--pixel-black);
+    color: var(--neon-orange);
+    box-shadow: 0 0 10px var(--neon-orange);
+}
+
+/* 像素卡片 */
+.pixel-card {
+    background-color: var(--pixel-gray);
+    border: var(--pixel-border);
+    padding: 16px;
+    transition: all 0.2s ease;
+}
+
+.pixel-card:hover {
+    box-shadow: 0 0 10px var(--neon-green);
+    transform: translateY(-2px);
+}
+
+/* 像素标签 */
+.pixel-tag {
+    background-color: var(--pixel-black);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    display: inline-block;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    margin-right: 4px;
+    padding: 2px 6px;
+}
+
+/* 像素输入框 */
+.pixel-input {
+    background-color: var(--pixel-black);
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    padding: 8px;
+    width: 100%;
+}
+
+.pixel-input:focus {
+    box-shadow: 0 0 8px var(--neon-green);
+    outline: none;
+}
+
+/* 像素选择框 */
+.pixel-select {
+    background-color: var(--pixel-black);
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    padding: 8px;
+}
+
+/* 像素复选框 */
+.pixel-checkbox {
+    appearance: none;
+    background-color: var(--pixel-black);
+    border: 2px solid var(--neon-green);
+    cursor: pointer;
+    height: 20px;
+    margin-right: 8px;
+    position: relative;
+    width: 20px;
+}
+
+.pixel-checkbox:checked::after {
+    color: var(--neon-green);
+    content: "✓";
+    font-size: 16px;
+    left: 3px;
+    position: absolute;
+    top: -2px;
+}
+
+/* 像素图标 */
+.pixel-icon {
+    font-size: 20px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+/* 像素分割线 */
+.pixel-divider {
+    border: none;
+    border-top: 2px dashed var(--neon-green);
+    margin: 16px 0;
+}
+
+/* 像素工具栏 */
+.pixel-toolbar {
+    align-items: center;
+    background-color: var(--pixel-gray);
+    border: var(--pixel-border);
+    display: flex;
+    padding: 8px;
+}
+
+/* 像素侧边栏 */
+.pixel-sidebar {
+    background-color: var(--pixel-gray);
+    border-left: var(--pixel-border);
+    height: 100%;
+    padding: 16px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    width: 300px;
+    z-index: 1000;
+}
+
+.pixel-sidebar.open {
+    transform: translateX(0);
+}
+
+/* 像素底部栏 */
+.pixel-footer {
+    background-color: var(--pixel-gray);
+    border-top: var(--pixel-border);
+    bottom: 0;
+    left: 0;
+    padding: 8px 16px;
+    position: fixed;
+    width: 100%;
+    z-index: 900;
+}
+
+/* 像素加载动画 */
+@keyframes pixel-loading {
+    0% {
+        box-shadow: 0 0 0 var(--neon-green);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--neon-green);
+    }
+
+    100% {
+        box-shadow: 0 0 0 var(--neon-green);
+    }
+}
+
+.pixel-loading {
+    animation: pixel-loading 1s infinite;
+    border: 2px solid var(--neon-green);
+    height: 20px;
+    margin: 20px auto;
+    width: 20px;
+}

@@ -1,0 +1,179 @@
+/* Minimalist theme for SkateSwap - clean, simple UI design */
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Base variables */
+:root {
+    --bg-light: #F8F9FA;
+    --bg-white: #FFFFFF;
+    --text-dark: #2D2D2D;
+    --text-medium: #6C757D;
+    --border-light: #E9ECEF;
+    --accent: #007BFF;
+}
+
+/* Global styles */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Card layout */
+.shoe-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .shoe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .shoe-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .shoe-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Card styles */
+.minimal-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    padding: 1.25rem;
+    transition: border-color 0.2s ease;
+}
+
+.minimal-card:hover {
+    border-color: var(--accent);
+}
+
+.minimal-card h3 {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.minimal-card-image {
+    aspect-ratio: 4/3;
+    background-color: var(--bg-light);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.minimal-card-image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.minimal-card-info {
+    color: var(--text-medium);
+    font-size: 0.875rem;
+}
+
+.minimal-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.minimal-btn {
+    background-color: var(--accent);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.minimal-btn:hover {
+    background-color: color-mix(in srgb, var(--accent) 90%, black);
+}
+
+.minimal-btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.minimal-btn-outline:hover {
+    background-color: color-mix(in srgb, var(--accent) 10%, white);
+}
+
+/* Form elements */
+.minimal-input {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+}
+
+.minimal-input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* Utility classes */
+.text-secondary {
+    color: var(--text-medium);
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 1rem 0;
+}
